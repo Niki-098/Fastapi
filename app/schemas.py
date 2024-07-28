@@ -22,12 +22,21 @@ class UserOut(BaseModel):
 
     class Config:
         orm_mode = True
+       
 
 class Post(PostBase):
     id: int
     created_at: datetime
     owner_id: int
     owner: UserOut
+
+    class Config:
+        orm_mode = True
+
+
+class PostOut(BaseModel):
+    Post: Post
+    votes: int
 
     class Config:
         orm_mode = True
