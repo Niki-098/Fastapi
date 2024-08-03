@@ -1,5 +1,8 @@
-from pydantic import BaseSettings
+from dotenv import load_dotenv
+import os
+from pydantic_settings import BaseSettings
 
+load_dotenv()
 
 class Settings(BaseSettings):
     database_hostname: str
